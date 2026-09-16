@@ -3,9 +3,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Catálogo | WeeDonald\'s',
-  description: 'Catálogo de produtos WeeDonald\'s.',
-  generator: 'v0.app',
+  title: 'Catálogo | Medellín,
+  description: 'Catálogo de produtos Medellín.',
+  generator: 'Rafikidev',
   icons: {
     icon: [
       {
