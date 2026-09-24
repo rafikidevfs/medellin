@@ -244,3 +244,25 @@ button, a { font: inherit; }
   from { transform: scale(0.95); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
+
+
+/* Ajuste responsivo para o bloco Hero e título da Categoria */
+.hero {
+  min-height: 100px;
+  height: auto;
+  padding: 20px 16px;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid #d0d0d0;
+  box-shadow: 0 1px 4px #0001;
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 6vw, 46px); /* Diminui fluidamente em telas menores */
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1px;
+  word-break: break-word; /* Evita que palavras longas quebrem o layout */
+}
