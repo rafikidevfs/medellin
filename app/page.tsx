@@ -56,12 +56,21 @@ export default function Page() {
   // Controla qual categoria foi aberta ao clicar em "Confira"
   const [activeCategory, setActiveCategory] = useState<Category | null>(null)
 
-  useEffect(() => {
+    useEffect(() => {
     async function fetchData() {
-      const { data: catData } = await supabase.from('categories').select('*')
+      // Ordena por created_at crescente para travar a posição original de criação
+      const { data: catData } = await supabase
+        .from('categories')
+        .select('*')
+        .order('created_at', { ascending: true })
+      
       if (catData) setCategories(catData)
 
-      const { data: prodData } = await supabase.from('products').select('*')
+      const { data: prodData } = await supabase
+        .from('products')
+        .select('*')
+        .order('created_at', { ascending: true }) // <-- TRAVA AQUI
+
       if (prodData) setProducts(prodData)
 
       setLoading(false)
